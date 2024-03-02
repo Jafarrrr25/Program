@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
+# Set backend matplotlib ke 'Agg'
+matplotlib.use('Agg')
+
 data_day = pd.read_csv("D:/Kuliah/Semester 6/Program/submission/data/cleaned_day.csv")
 data_hour = pd.read_csv("D:/Kuliah/Semester 6/Program/submission/data/cleaned_hour.csv")
 
@@ -76,7 +79,7 @@ elif option == 'Bulanan':
 
 elif option == 'Jam':
     st.write('Silakan hubungi kami di sini.')
-    hour_count = data_hour['month'].value_counts().astype(int)
+    hour_count = data_hour['hour'].value_counts().astype(int)
 
     # BUat plot
     sns.set_style("whitegrid")
