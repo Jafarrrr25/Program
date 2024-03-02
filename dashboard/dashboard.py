@@ -28,6 +28,9 @@ st.write('Persewaan Sepeda pada tahun 2011-2012 ')
 
 # Menampilkan hasil berdasarkan pilihan dari sidebar
 if option == 'Harian':
+    st.write(
+        "Berikut merupakan grafik persewaan sepeda perhari:"
+    )
     day_count_user = data_day['weekday'].value_counts()
     hour_count_user = data_hour['weekday'].value_counts()
 
@@ -43,7 +46,7 @@ if option == 'Harian':
 
     # Menambahkan judul dan label sumbu
     plt.title('Customer List by Day', fontsize=16)
-    plt.xlabel('Weather Conditions', fontsize=12)
+    plt.xlabel('Day', fontsize=12)
     plt.ylabel('Customer', fontsize=12)
 
     # Menambahkan label angka di atas setiap bar
@@ -51,6 +54,9 @@ if option == 'Harian':
         plt.text(i, count, str(count), ha='center', va='bottom', fontsize=12)
     
     st.pyplot(plt)
+    st.write(
+        "Berdasarkan grafik diatas, pengunjung paling banyak datang di hari Minggu, karena biasanya orang akan melakukan aktivitas yang santai pada hari Minggu untuk melepas penat."
+    )
     
 elif option == 'Bulanan':
     st.write(
@@ -78,12 +84,14 @@ elif option == 'Bulanan':
     st.pyplot(plt)
 
     st.write(
-        "Dapat dilihat bahwa bulan Mei dan Juli merupakan bulan yang paling banyak dikunjungi oleh penyewa sepeda. "
+        "Dapat dilihat bahwa bulan Mei dan Juli merupakan bulan yang paling banyak dikunjungi oleh penyewa sepeda dengan total pengunjung di masing-masing bulan adalah 1550 pengunjung. "
     )
 
 elif option == 'Jam':
-    st.write('Silakan hubungi kami di sini.')
-    hour_count = data_hour['hour'].value_counts().astype(int)
+    st.write(
+        "Berikut merupakan grafik persewaan sepeda perjam:"
+    )
+    hour_count = data_hour['hour'].value_counts().sort_index()
 
     # BUat plot
     sns.set_style("whitegrid")
@@ -92,7 +100,7 @@ elif option == 'Jam':
 
     # Menambahkan judul dan label sumbu
     plt.title('Customer List by Hour', fontsize=16)
-    plt.xlabel('Month', fontsize=12)
+    plt.xlabel('Hour', fontsize=12)
     plt.ylabel('Customer', fontsize=12)
 
     # Menambahkan label angka di atas setiap bar
@@ -100,3 +108,6 @@ elif option == 'Jam':
         plt.text(i, count, str(count), ha='center', va='bottom', fontsize=12)
     
     st.pyplot(plt)
+    st.write(
+        "Berdasarkan grafik diatas, "
+    )
