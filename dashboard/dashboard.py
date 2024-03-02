@@ -1,11 +1,10 @@
 import streamlit as st
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
-# Set backend matplotlib ke 'Agg'
-matplotlib.use('Agg')
 
 data_day = pd.read_csv("D:/Kuliah/Semester 6/Program/submission/data/cleaned_day.csv")
 data_hour = pd.read_csv("D:/Kuliah/Semester 6/Program/submission/data/cleaned_hour.csv")
