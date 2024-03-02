@@ -38,7 +38,7 @@ if option == 'Harian':
 
     # BUat plot
     sns.set_style("whitegrid")
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(10, 8))
     sns.barplot(x=total.index, y=total.values, palette='viridis')
 
     # Menambahkan judul dan label sumbu
@@ -61,7 +61,7 @@ elif option == 'Bulanan':
 
     # BUat plot
     sns.set_style("whitegrid")
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(10, 8))
     sns.barplot(x=total_month.index, y=total_month.values, palette='viridis')
 
     # Menambahkan judul dan label sumbu
@@ -81,7 +81,7 @@ elif option == 'Jam':
 
     # BUat plot
     sns.set_style("whitegrid")
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(10, 8))
     sns.barplot(x=hour_count.index, y=hour_count.values, palette='viridis')
 
     # Menambahkan judul dan label sumbu
