@@ -4,9 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
-
-data_day = pd.read_csv("data/cleaned_day.csv")
-data_hour = pd.read_csv("data/cleaned_hour.csv")
+data_day = pd.read_csv("cleaned_day.csv")
+data_hour = pd.read_csv("cleaned_hour.csv")
 
 #Dataframe
 datetime_cols = ["date", "date"]
@@ -62,6 +61,12 @@ elif option == 'Bulanan':
     st.write(
         "Berikut merupakan grafik persewaan sepeda perbulannya:"
     )
+
+    # Digunakan untuk mengurutkan hari
+    months_ordered = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    data_day['weekday'] = pd.Categorical(data_day['weekday'], categories=months_ordered, ordered=True)
+    data_hour['weekday'] = pd.Categorical(data_hour['weekday'], categories=months_ordered, ordered=True)
+    
     monthD_count_user = data_day['month'].value_counts().astype(int).sort_index()
     monthH_count_user = data_hour['month'].value_counts().astype(int).sort_index()
 
