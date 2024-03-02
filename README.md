@@ -1,4 +1,5 @@
 # Proyek Analisis Data
+Proyek ini digunakan untuk Submission dicoding
 
 ## Setup environment
 Pastikan bahwa anda harus menginstall library berikut: 
