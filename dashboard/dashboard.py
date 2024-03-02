@@ -35,7 +35,7 @@ if option == 'Harian':
     hour_count_user = data_hour['weekday'].value_counts()
 
     # Menyamakan indeks dengan reindex()
-    day_count_user = day_count_user.reindex(hour_count_user.index, fill_value=0).astype(int)
+    day_count_user = day_count_user.reindex(hour_count_user.index, fill_value=0).astype(int).sort_index()
 
     total = day_count_user + hour_count_user
 
@@ -62,8 +62,8 @@ elif option == 'Bulanan':
     st.write(
         "Berikut merupakan grafik persewaan sepeda perbulannya:"
     )
-    monthD_count_user = data_day['month'].value_counts().astype(int)
-    monthH_count_user = data_hour['month'].value_counts().astype(int)
+    monthD_count_user = data_day['month'].value_counts().astype(int).sort_index()
+    monthH_count_user = data_hour['month'].value_counts().astype(int).sort_index()
 
     total_month = monthD_count_user + monthH_count_user
 
@@ -109,5 +109,5 @@ elif option == 'Jam':
     
     st.pyplot(plt)
     st.write(
-        "Berdasarkan grafik diatas, "
+        "Berdasarkan grafik diatas, terlihat bahwa jam 4-5 sore banyak pengunjung datang untuk menyewa sepeda. Sore hari merupakan waktu yang tepat untuk bersepeda"
     )
