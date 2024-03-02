@@ -53,7 +53,9 @@ if option == 'Harian':
     st.pyplot(plt)
     
 elif option == 'Bulanan':
-    st.write('Ini adalah halaman tentang kami.')
+    st.write(
+        "Berikut merupakan grafik persewaan sepeda perbulannya:"
+    )
     monthD_count_user = data_day['month'].value_counts().astype(int)
     monthH_count_user = data_hour['month'].value_counts().astype(int)
 
@@ -61,7 +63,7 @@ elif option == 'Bulanan':
 
     # BUat plot
     sns.set_style("whitegrid")
-    plt.figure(figsize=(10, 8))
+    plt.figure(figsize=(12, 8))
     sns.barplot(x=total_month.index, y=total_month.values, palette='viridis')
 
     # Menambahkan judul dan label sumbu
@@ -74,6 +76,10 @@ elif option == 'Bulanan':
         plt.text(i, count, str(count), ha='center', va='bottom', fontsize=12)
     
     st.pyplot(plt)
+
+    st.write(
+        "Dapat dilihat bahwa bulan Mei dan Juli merupakan bulan yang paling banyak dikunjungi oleh penyewa sepeda. "
+    )
 
 elif option == 'Jam':
     st.write('Silakan hubungi kami di sini.')
