@@ -63,10 +63,11 @@ elif option == 'Bulanan':
     )
 
     # Digunakan untuk mengurutkan hari
-    months_ordered = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    data_day['weekday'] = pd.Categorical(data_day['weekday'], categories=months_ordered, ordered=True)
-    data_hour['weekday'] = pd.Categorical(data_hour['weekday'], categories=months_ordered, ordered=True)
-    
+    # Digunakan untuk mengurutkan bulan
+    months_ordered = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    data_day['month'] = pd.Categorical(data_day['month'], categories=months_ordered, ordered=True)
+    data_hour['month'] = pd.Categorical(data_hour['month'], categories=months_ordered, ordered=True)
+        
     monthD_count_user = data_day['month'].value_counts().astype(int).sort_index()
     monthH_count_user = data_hour['month'].value_counts().astype(int).sort_index()
 
