@@ -81,7 +81,7 @@ elif option == 'Jam':
 
     # BUat plot
     sns.set_style("whitegrid")
-    plt.figure(figsize=(10, 8))
+    plt.figure(figsize=(14, 8))
     sns.barplot(x=hour_count.index, y=hour_count.values, palette='viridis')
 
     # Menambahkan judul dan label sumbu
