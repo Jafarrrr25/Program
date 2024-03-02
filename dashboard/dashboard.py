@@ -5,8 +5,8 @@ import seaborn as sns
 import numpy as np
 
 
-data_day = pd.read_csv("data/cleaned_day.csv")
-data_hour = pd.read_csv("data/cleaned_hour.csv")
+data_day = pd.read_csv("data\cleaned_day.csv")
+data_hour = pd.read_csv("data\cleaned_hour.csv")
 
 #Dataframe
 datetime_cols = ["date", "date"]
