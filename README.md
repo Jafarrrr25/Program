@@ -3,7 +3,7 @@
 ## Setup environment
 Pastikan bahwa anda harus menginstall library berikut: 
 ```
-pip install numpy pandas matplotlib seaborn jupyter streamlit
+pip install numpy pandas matplotlib seaborn streamlit
 ```
 
 ## Run steamlit app
