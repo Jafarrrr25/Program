@@ -30,6 +30,13 @@ if option == 'Harian':
     st.write(
         "Berikut merupakan grafik persewaan sepeda perhari:"
     )
+
+    # Digunakan untuk mengurutkan hari
+    months_ordered = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    data_day['weekday'] = pd.Categorical(data_day['weekday'], categories=months_ordered, ordered=True)
+    data_hour['weekday'] = pd.Categorical(data_hour['weekday'], categories=months_ordered, ordered=True)
+
+    # Mencari banyak value per kolomnya
     day_count_user = data_day['weekday'].value_counts()
     hour_count_user = data_hour['weekday'].value_counts()
 
@@ -52,6 +59,7 @@ if option == 'Harian':
     for i, count in enumerate(total.values):
         plt.text(i, count, str(count), ha='center', va='bottom', fontsize=12)
     
+    # menampilkan plot
     st.pyplot(plt)
     st.write(
         "Berdasarkan grafik diatas, pengunjung paling banyak datang di hari Minggu, karena biasanya orang akan melakukan aktivitas yang santai pada hari Minggu untuk melepas penat."
@@ -62,12 +70,12 @@ elif option == 'Bulanan':
         "Berikut merupakan grafik persewaan sepeda perbulannya:"
     )
 
-    # Digunakan untuk mengurutkan hari
     # Digunakan untuk mengurutkan bulan
     months_ordered = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     data_day['month'] = pd.Categorical(data_day['month'], categories=months_ordered, ordered=True)
     data_hour['month'] = pd.Categorical(data_hour['month'], categories=months_ordered, ordered=True)
         
+    # mencari banyaknya value pada nilai kolom month
     monthD_count_user = data_day['month'].value_counts().astype(int).sort_index()
     monthH_count_user = data_hour['month'].value_counts().astype(int).sort_index()
 
@@ -97,6 +105,8 @@ elif option == 'Jam':
     st.write(
         "Berikut merupakan grafik persewaan sepeda perjam:"
     )
+
+    # mencari banyaknya value pada nilai kolom hour
     hour_count = data_hour['hour'].value_counts().sort_index()
 
     # BUat plot
