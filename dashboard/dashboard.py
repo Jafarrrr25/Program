@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
-data_day = pd.read_csv("cleaned_day.csv")
-data_hour = pd.read_csv("cleaned_hour.csv")
+data_day = pd.read_csv("dashboard/cleaned_day.csv")
+data_hour = pd.read_csv("dashboard/cleaned_hour.csv")
 
 #Dataframe
 datetime_cols = ["date", "date"]
